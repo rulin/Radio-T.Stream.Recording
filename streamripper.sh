@@ -19,7 +19,7 @@ while [ 1 == 1 ]; do
                 break
         fi
 
-        currentCountProcess=`ps ax | egrep '[0-9]+:[0-9]+ ${streamRipperPath}' | wc -l`
+        currentCountProcess=`ps ax | egrep "[0-9]+:[0-9]+ ${streamRipperPath}" | wc -l`
         if [[ "$currentCountProcess" -lt "$countProcess" ]]
         then
                 ${streamRipperPath} ${streamURL} -a -A -s -d ${dirPath} -l ${lengthSecond} --quiet &
